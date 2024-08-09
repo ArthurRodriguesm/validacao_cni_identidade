@@ -25,8 +25,7 @@ _, _, ref_width_px, _ = cv2.boundingRect(reference_contour)
 # Calcula a razão pixels-para-cm
 pixels_per_cm = ref_width_px / known_width_cm
 
-# Agora, encontre o contorno do objeto que você quer medir (pode ser feito manualmente ou por critérios específicos)
-# Neste exemplo, vamos medir o maior contorno que não seja o de referência
+# Medir o maior contorno que não seja o de referência
 object_contour = sorted(contours, key=cv2.contourArea, reverse=True)[1]
 
 # Calcula o retângulo delimitador do contorno do objeto
